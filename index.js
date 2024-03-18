@@ -23,11 +23,12 @@ app.get('/bfhl',(req,res)=>{
 })
 
 app.post('/bfhl', (req, res) => {
+    try{
 
         const data = req.body.data;
 
 
-        const user_id = "harshit_18072004";
+        const user_id = "harshit_aggarwal_18072004";
 
 
         const email = "harshit1084.be21@chitkarauniversity.edu.in";
@@ -60,6 +61,12 @@ app.post('/bfhl', (req, res) => {
             alphabets: alphabets
         };
         res.json(response);
+    }catch(e){
+        res.json({
+            is_success: false,
+            error: e
+    });
+    }
 });
 
 
